@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henry.256</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 650px;
+            width: 90%;
+            padding: 20px 40px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+        h1 {
+            font-size: 1.75rem; /* Decreased from 2rem */
+            margin-bottom: 30px;
+            font-weight: normal;
+            font-family: 'Courier New', Courier, monospace;
+            display: block;
+            width: 100%;
+            padding: 0;
+            border-bottom: 1px solid #666666 !important;
+        }
+        .section {
+            /* Reduced general margin-bottom for tighter grouping */
+            margin-bottom: 20px; 
+            font-family: 'Courier New', Courier, monospace;
+            text-align: left;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            color: #cccccc;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        .content {
+            background-color: #0d1218; /* Dark blue tint */
+            padding: 6px 6px;
+            border-radius: 2px;
+            font-size: 0.85rem;
+            white-space: pre-wrap;
+            word-break: break-all;
+            cursor: pointer;
+            position: relative;
+        }
+        /* Make the entire content clickable */
+        .content:hover {
+            background-color: #121a24;
+        }
+        /* Notification for copy action - MODIFIED STYLES HERE */
+        .copy-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000000; /* Black background */
+            color: #ffffff; /* White text */
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            pointer-events: none;
+        }
+        .copy-notification.show {
+            opacity: 1;
+        }
+        a {
+            color: #e0e0e0;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Henry.256</h1>
+        
+        <!-- SimpleX Chat Section (Now first) -->
+        <div class="section">
+            <label for="simplex">SimpleX Chat:</label>
+            <div class="content" onclick="copyText(this)"><a href="https://smp19.simplex.im/g#oPC4ufNCuNO7EOk-lx68GFimv15BYBxiFccwRmWCsDE" target="_blank" rel="noopener noreferrer">https://smp19.simplex.im/g#oPC4ufNCuNO7EOk-lx68GFimv15BYBxiFccwRmWCsDE</a></div>
+        </div>
+        <!-- Signal Chat Section -->
+        <div class="section">
+            <label for="signal">Signal Chat:</label>
+            <div class="content" onclick="copyText(this)"><a href="https://signal.me/#eu/1VuW1ePXObBOoqsiM5md3oD-4INI_cI8aIaSrT3aOU4pca_G--RKnovnREnrakYa" target="_blank" rel="noopener noreferrer">https://signal.me/#eu/1VuW1ePXObBOoqsiM5md3oD-4INI_cI8aIaSrT3aOU4pca_G--RKnovnREnrakYa</a></div>
+        </div>
+        <!-- Email Section -->
+        <div class="section">
+            <label for="email">Email:</label>
+            <div class="content" onclick="copyText(this)"><a href="mailto:0xHenry.256@protonmail.com">0xHenry.256@protonmail.com</a></div>
+        </div>
+        <!-- PGP Key Section (Original) -->
+        <div class="section">
+            <label for="pgp">PGP: (Post Quantum - Requires v2.5+ of GnuPG)</label>
+            <div class="content" onclick="copyText(this)">6F1281A0C2D29B6D57CFA613817F05D38584E0799F9705E2AD241E42625742DF</div>
+        </div>
+        <!-- New PGP Key Section (Added at the end of the page) -->
+        <div class="section content-key">
+            <div class="content" onclick="copyText(this)">-----BEGIN PGP PUBLIC KEY BLOCK-----
+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
+=lXuT
+-----END PGP PUBLIC KEY BLOCK-----</div >
+    </div>
+    <!-- Copy Notification -->
+    <div class="copy-notification" id="notification">Copied to clipboard!</div >
+    <script>
+        function copyText(element) {
+            // Get the text from the clicked element (including href if it's a link)
+            let textToCopy = "";
+            
+            if (element.querySelector('a')) {
+                // If there is an anchor tag, use the URL as the copied text
+                const link = element.querySelector('a');
+                textToCopy = link.getAttribute('href');
+            } else {
+                // Otherwise, just get the inner text
+                textToCopy = element.textContent;
+            }
+            
+            navigator.clipboard.writeText(textToCopy).then(function() {
+                showNotification();
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+            
+            // Hide the notification after 2 seconds
+            setTimeout(function() {
+                notification.classList.remove('show');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
